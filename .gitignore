@@ -1,0 +1,13 @@
+# Python-related
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Build-related
+build/
+dist/
+
+# System-specific files
+.DS_Store
+Thumbs.db
