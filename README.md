@@ -60,6 +60,7 @@ nk-video-merge /path/to/video_folder -o output.mp4
 ---
 
 ## 📌 TODO
+- [ ] Add `.srt` merge support(auto shift)
 - [ ] Add Windows support
 - [ ] Improve CLI usability
 - [ ] Add GUI for better user experience
