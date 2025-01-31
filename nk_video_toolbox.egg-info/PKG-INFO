@@ -1,0 +1,6 @@
+Metadata-Version: 2.2
+Name: nk_video_toolbox
+Version: 0.1
+License-File: LICENSE
+Requires-Dist: ffmpeg-python
+Dynamic: requires-dist
