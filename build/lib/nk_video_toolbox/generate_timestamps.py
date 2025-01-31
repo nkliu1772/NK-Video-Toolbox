@@ -61,6 +61,21 @@ def generate_timestamps(video_directory):
 
     print(f"\n✅ YouTube 章節時間戳記已生成: {output_timestamps}")
 
+def display_timestamps(video_directory):
+    """ 讀取並顯示 timestamps.txt 的內容 """
+    folder_name = os.path.basename(os.path.normpath(video_directory))
+    timestamps_path = os.path.join(video_directory, f"{folder_name}.txt")
+
+    if not os.path.exists(timestamps_path):
+        print("\n❌ 找不到 `timestamps.txt`，請確認是否已經生成。")
+        return False
+
+    print("\n📌 以下是時間軸內容:")
+    with open(timestamps_path, "r", encoding="utf-8") as f:
+        print(f.read())  # 直接顯示內容
+
+    return True
+
 def main():
     parser = argparse.ArgumentParser(description="單獨產生 YouTube 章節時間戳記")
     parser.add_argument("video_directory", help="影片所在的資料夾")

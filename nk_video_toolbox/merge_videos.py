@@ -40,9 +40,12 @@ def merge_videos(video_directory, output_file=None, keep_filelist=False):
     file_list_path = os.path.join(video_directory, "file_list.txt")
     with open(file_list_path, "w") as f:
         for file in files:
-            f.write(f"file '{os.path.join(video_directory, file)}'\n")
+            # 使用正確的絕對路徑，避免多重資料夾錯誤
+            file_path = os.path.abspath(os.path.join(video_directory, file))
+            f.write(f"file '{file_path}'\n")
 
-    print(f"\n🚀 開始合併影片，輸出檔案: {output_file}\n")
+
+    print(f"\n🚀 **開始合併影片，輸出檔案:** {output_file}\n")
 
     cmd = [
         "ffmpeg", "-f", "concat", "-safe", "0",
